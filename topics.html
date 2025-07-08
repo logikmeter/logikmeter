@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topics - LogikMeter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-brain me-2"></i>LogikMeter
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" data-en="Home" data-fa="خانه">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html" data-en="Dashboard" data-fa="داشبورد">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="topics.html" data-en="Topics" data-fa="موضوعات">Topics</a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <!-- Language Toggle -->
+                    <div class="dropdown me-3">
+                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
+                            <i class="fas fa-globe me-1"></i>
+                            <span id="currentLang">EN</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="changeLanguage('en')">English</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="changeLanguage('fa')">فارسی</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- User Menu -->
+                    <div class="dropdown">
+                        <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user me-1"></i>John Doe
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="wallet.html"><i class="fas fa-wallet me-2"></i><span data-en="Wallet" data-fa="کیف پول">Wallet</span></a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i><span data-en="Settings" data-fa="تنظیمات">Settings</span></a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i><span data-en="Logout" data-fa="خروج">Logout</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5 pt-4">
+        <!-- Header -->
+        <div class="row mb-4">
+            <div class="col-md-8">
+                <h2 class="fw-bold" data-en="Explore Topics" data-fa="کاوش موضوعات">Explore Topics</h2>
+                <p class="text-muted" data-en="Discover interesting discussions and join the conversation" data-fa="بحث های جالب را کشف کنید و به گفتگو بپیوندید">Discover interesting discussions and join the conversation</p>
+            </div>
+            <div class="col-md-4 text-end">
+                <a href="create-topic.html" class="btn btn-primary">
+                    <i class="fas fa-plus me-2"></i>
+                    <span data-en="Create Topic" data-fa="ایجاد موضوع">Create Topic</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Filters and Search -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+                    <input type="text" class="form-control" placeholder="Search topics..." data-en-placeholder="Search topics..." data-fa-placeholder="جستجوی موضوعات...">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <select class="form-select" id="categoryFilter">
+                    <option value="" data-en="All Categories" data-fa="همه دسته ها">All Categories</option>
+                    <option value="technology" data-en="Technology" data-fa="فناوری">Technology</option>
+                    <option value="politics" data-en="Politics" data-fa="سیاست">Politics</option>
+                    <option value="environment" data-en="Environment" data-fa="محیط زیست">Environment</option>
+                    <option value="education" data-en="Education" data-fa="آموزش">Education</option>
+                    <option value="health" data-en="Health" data-fa="سلامت">Health</option>
+                    <option value="business" data-en="Business" data-fa="تجارت">Business</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <select class="form-select" id="statusFilter">
+                    <option value="" data-en="All Status" data-fa="همه وضعیت ها">All Status</option>
+                    <option value="active" data-en="Active Discussion" data-fa="بحث فعال">Active Discussion</option>
+                    <option value="voting" data-en="Voting Phase" data-fa="مرحله رای گیری">Voting Phase</option>
+                    <option value="completed" data-en="Completed" data-fa="تکمیل شده">Completed</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Topics List -->
+        <div class="row">
+            <div class="col-12">
+                <!-- Topic Card 1 -->
+                <div class="card topic-card mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="d-flex align-items-start mb-2">
+                                    <span class="badge bg-primary me-2">Technology</span>
+                                    <span class="badge bg-success">Active Discussion</span>
+                                </div>
+                                <h5 class="card-title mb-2">
+                                    <a href="topic.html" class="text-decoration-none">Should remote work be mandatory for tech companies?</a>
+                                </h5>
+                                <p class="card-text text-muted mb-3">
+                                    With the rise of remote work during the pandemic, many tech companies are reconsidering their office policies. This topic explores the benefits and challenges of making remote work mandatory...
+                                </p>
+                                <div class="d-flex align-items-center text-muted small">
+                                    <i class="fas fa-user me-1"></i>
+                                    <span class="me-3">John Doe</span>
+                                    <i class="fas fa-clock me-1"></i>
+                                    <span class="me-3">2 days ago</span>
+                                    <i class="fas fa-users me-1"></i>
+                                    <span class="me-3">15 participants</span>
+                                    <i class="fas fa-vote-yea me-1"></i>
+                                    <span>23 votes</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-end">
+                                    <div class="mb-2">
+                                        <span class="text-warning fw-bold">
+                                            <i class="fas fa-coins"></i> 50 LMC
+                                        </span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar bg-success" style="width: 65%"></div>
+                                        </div>
+                                        <small class="text-muted">Discussion: 65% complete</small>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <a href="topic.html" class="btn btn-outline-primary btn-sm">View</a>
+                                        <button class="btn btn-primary btn-sm">Join Discussion</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic Card 2 -->
+                <div class="card topic-card mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="d-flex align-items-start mb-2">
+                                    <span class="badge bg-success me-2">Environment</span>
+                                    <span class="badge bg-warning">Voting Phase</span>
+                                </div>
+                                <h5 class="card-title mb-2">
+                                    <a href="topic.html" class="text-decoration-none">Best practices for sustainable urban development</a>
+                                </h5>
+                                <p class="card-text text-muted mb-3">
+                                    As cities continue to grow, sustainable development becomes crucial. This discussion focuses on innovative approaches to urban planning that balance growth with environmental responsibility...
+                                </p>
+                                <div class="d-flex align-items-center text-muted small">
+                                    <i class="fas fa-user me-1"></i>
+                                    <span class="me-3">Sarah Johnson</span>
+                                    <i class="fas fa-clock me-1"></i>
+                                    <span class="me-3">5 days ago</span>
+                                    <i class="fas fa-users me-1"></i>
+                                    <span class="me-3">28 participants</span>
+                                    <i class="fas fa-vote-yea me-1"></i>
+                                    <span>45 votes</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-end">
+                                    <div class="mb-2">
+                                        <span class="text-warning fw-bold">
+                                            <i class="fas fa-coins"></i> 120 LMC
+                                        </span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <div class="countdown-timer">
+                                            <i class="fas fa-clock text-warning"></i>
+                                            <span class="fw-bold">12:34</span>
+                                            <small class="text-muted d-block">voting ends</small>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <a href="topic.html" class="btn btn-outline-primary btn-sm">View</a>
+                                        <button class="btn btn-warning btn-sm">Vote Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic Card 3 -->
+                <div class="card topic-card mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="d-flex align-items-start mb-2">
+                                    <span class="badge bg-info me-2">Education</span>
+                                    <span class="badge bg-secondary">Completed</span>
+                                </div>
+                                <h5 class="card-title mb-2">
+                                    <a href="topic.html" class="text-decoration-none">Impact of AI on education systems</a>
+                                </h5>
+                                <p class="card-text text-muted mb-3">
+                                    Artificial Intelligence is transforming education at all levels. This comprehensive discussion examines how AI tools can enhance learning while addressing concerns about academic integrity...
+                                </p>
+                                <div class="d-flex align-items-center text-muted small">
+                                    <i class="fas fa-user me-1"></i>
+                                    <span class="me-3">Dr. Michael Chen</span>
+                                    <i class="fas fa-clock me-1"></i>
+                                    <span class="me-3">1 week ago</span>
+                                    <i class="fas fa-users me-1"></i>
+                                    <span class="me-3">32 participants</span>
+                                    <i class="fas fa-vote-yea me-1"></i>
+                                    <span>67 votes</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-end">
+                                    <div class="mb-2">
+                                        <span class="text-warning fw-bold">
+                                            <i class="fas fa-coins"></i> 200 LMC
+                                        </span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <div class="text-success">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span class="fw-bold">Completed</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <a href="topic.html" class="btn btn-outline-primary btn-sm">View Results</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic Card 4 -->
+                <div class="card topic-card mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="d-flex align-items-start mb-2">
+                                    <span class="badge bg-danger me-2">Politics</span>
+                                    <span class="badge bg-primary">Open for Discussion</span>
+                                </div>
+                                <h5 class="card-title mb-2">
+                                    <a href="topic.html" class="text-decoration-none">Digital privacy rights in the modern age</a>
+                                </h5>
+                                <p class="card-text text-muted mb-3">
+                                    With increasing digitization, the balance between security and privacy becomes more complex. This topic explores how governments and companies should handle personal data...
+                                </p>
+                                <div class="d-flex align-items-center text-muted small">
+                                    <i class="fas fa-user me-1"></i>
+                                    <span class="me-3">Alex Rodriguez</span>
+                                    <i class="fas fa-clock me-1"></i>
+                                    <span class="me-3">3 hours ago</span>
+                                    <i class="fas fa-users me-1"></i>
+                                    <span class="me-3">8 participants</span>
+                                    <i class="fas fa-vote-yea me-1"></i>
+                                    <span>12 votes</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="text-end">
+                                    <div class="mb-2">
+                                        <span class="text-warning fw-bold">
+                                            <i class="fas fa-coins"></i> 75 LMC
+                                        </span>
+                                    </div>
+                                    <div class="mb-2">
+                                        <span class="text-primary">
+                                            <i class="fas fa-users"></i> Join Discussion
+                                        </span>
+                                    </div>
+                                    <div class="d-flex gap-2">
+                                        <a href="topic.html" class="btn btn-outline-primary btn-sm">View</a>
+                                        <button class="btn btn-primary btn-sm">Start Discussion</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <nav aria-label="Topics pagination">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="text-center">
+                <p>&copy; 2024 LogikMeter. <span data-en="All rights reserved." data-fa="تمام حقوق محفوظ است.">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

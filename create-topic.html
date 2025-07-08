@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Topic - LogikMeter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-brain me-2"></i>LogikMeter
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" data-en="Home" data-fa="خانه">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html" data-en="Dashboard" data-fa="داشبورد">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="topics.html" data-en="Topics" data-fa="موضوعات">Topics</a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <!-- Language Toggle -->
+                    <div class="dropdown me-3">
+                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
+                            <i class="fas fa-globe me-1"></i>
+                            <span id="currentLang">EN</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="changeLanguage('en')">English</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="changeLanguage('fa')">فارسی</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- User Menu -->
+                    <div class="dropdown">
+                        <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user me-1"></i>John Doe
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="wallet.html"><i class="fas fa-wallet me-2"></i><span data-en="Wallet" data-fa="کیف پول">Wallet</span></a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i><span data-en="Settings" data-fa="تنظیمات">Settings</span></a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i><span data-en="Logout" data-fa="خروج">Logout</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5 pt-4">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Topic Creation Form -->
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="mb-0" data-en="Create New Topic" data-fa="ایجاد موضوع جدید">Create New Topic</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="topicForm">
+                            <div class="mb-4">
+                                <label class="form-label fw-bold" data-en="Topic Title" data-fa="عنوان موضوع">Topic Title</label>
+                                <input type="text" class="form-control form-control-lg" id="topicTitle" placeholder="Enter a clear, engaging title for your topic" required>
+                                <div class="form-text" data-en="Make it specific and thought-provoking" data-fa="آن را مشخص و تحریک کننده فکر کنید">Make it specific and thought-provoking</div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label fw-bold" data-en="Topic Description" data-fa="توضیحات موضوع">Topic Description</label>
+                                <textarea class="form-control" id="topicDescription" rows="6" placeholder="Provide detailed context, background information, and key points you want to discuss..." required></textarea>
+                                <div class="form-text" data-en="Include relevant background, key questions, and context" data-fa="شامل پیش زمینه مربوطه، سوالات کلیدی و زمینه">Include relevant background, key questions, and context</div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label fw-bold" data-en="Category" data-fa="دسته بندی">Category</label>
+                                <select class="form-select" id="topicCategory" required>
+                                    <option value="" data-en="Select a category" data-fa="یک دسته انتخاب کنید">Select a category</option>
+                                    <option value="technology" data-en="Technology" data-fa="فناوری">Technology</option>
+                                    <option value="politics" data-en="Politics" data-fa="سیاست">Politics</option>
+                                    <option value="environment" data-en="Environment" data-fa="محیط زیست">Environment</option>
+                                    <option value="education" data-en="Education" data-fa="آموزش">Education</option>
+                                    <option value="health" data-en="Health" data-fa="سلامت">Health</option>
+                                    <option value="business" data-en="Business" data-fa="تجارت">Business</option>
+                                    <option value="social" data-en="Social Issues" data-fa="مسائل اجتماعی">Social Issues</option>
+                                    <option value="other" data-en="Other" data-fa="سایر">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label fw-bold" data-en="Tags" data-fa="برچسب ها">Tags</label>
+                                <input type="text" class="form-control" id="topicTags" placeholder="artificial-intelligence, future-of-work, automation">
+                                <div class="form-text" data-en="Separate tags with commas (optional)" data-fa="برچسب ها را با کاما جدا کنید (اختیاری)">Separate tags with commas (optional)</div>
+                            </div>
+                            
+                            <div class="d-flex gap-3">
+                                <button type="button" class="btn btn-primary btn-lg" id="requestAnalysis">
+                                    <i class="fas fa-robot me-2"></i>
+                                    <span data-en="Request AI Analysis" data-fa="درخواست تحلیل هوش مصنوعی">Request AI Analysis</span>
+                                </button>
+                                <button type="button" class="btn btn-outline-secondary btn-lg" onclick="window.history.back()">
+                                    <span data-en="Cancel" data-fa="لغو">Cancel</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <!-- AI Analysis Preview -->
+                <div class="card" id="analysisPreview" style="display: none;">
+                    <div class="card-header">
+                        <h5 class="mb-0" data-en="AI Analysis Preview" data-fa="پیش نمایش تحلیل هوش مصنوعی">AI Analysis Preview</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="analysisContent">
+                            <div class="mb-3">
+                                <h6 class="text-primary" data-en="Key Points" data-fa="نکات کلیدی">Key Points</h6>
+                                <ul id="keyPoints">
+                                    <li>Remote work increases productivity for many employees</li>
+                                    <li>Companies save on office space and overhead costs</li>
+                                    <li>Work-life balance improves significantly</li>
+                                    <li>Some roles require in-person collaboration</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <h6 class="text-success" data-en="Arguments For" data-fa="استدلال های موافق">Arguments For</h6>
+                                <ul id="argumentsFor">
+                                    <li>Reduced commute time and stress</li>
+                                    <li>Access to global talent pool</li>
+                                    <li>Environmental benefits</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <h6 class="text-danger" data-en="Arguments Against" data-fa="استدلال های مخالف">Arguments Against</h6>
+                                <ul id="argumentsAgainst">
+                                    <li>Potential isolation and mental health issues</li>
+                                    <li>Difficulty in team building and culture</li>
+                                    <li>Security and data protection concerns</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <h6 class="text-info" data-en="Discussion Questions" data-fa="سوالات بحث">Discussion Questions</h6>
+                                <ul id="discussionQuestions">
+                                    <li>How can companies maintain culture remotely?</li>
+                                    <li>What roles are best suited for remote work?</li>
+                                    <li>How to measure productivity effectively?</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex gap-2 mt-3">
+                            <button class="btn btn-success btn-sm flex-fill" id="publishTopic">
+                                <i class="fas fa-check me-1"></i>
+                                <span data-en="Publish" data-fa="انتشار">Publish</span>
+                            </button>
+                            <button class="btn btn-outline-primary btn-sm" id="editAnalysis">
+                                <i class="fas fa-edit me-1"></i>
+                                <span data-en="Edit" data-fa="ویرایش">Edit</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tips Card -->
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h6 class="mb-0" data-en="Tips for Better Topics" data-fa="نکاتی برای موضوعات بهتر">Tips for Better Topics</h6>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <i class="fas fa-lightbulb text-warning me-2"></i>
+                                <span data-en="Be specific and focused" data-fa="مشخص و متمرکز باشید">Be specific and focused</span>
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-users text-primary me-2"></i>
+                                <span data-en="Consider multiple perspectives" data-fa="دیدگاه های متعدد را در نظر بگیرید">Consider multiple perspectives</span>
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-question-circle text-info me-2"></i>
+                                <span data-en="Ask thought-provoking questions" data-fa="سوالات تحریک کننده فکر بپرسید">Ask thought-provoking questions</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-chart-line text-success me-2"></i>
+                                <span data-en="Provide relevant data/context" data-fa="داده ها/زمینه مربوطه ارائه دهید">Provide relevant data/context</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Analysis Modal -->
+    <div class="modal fade" id="editAnalysisModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" data-en="Edit AI Analysis" data-fa="ویرایش تحلیل هوش مصنوعی">Edit AI Analysis</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold" data-en="Key Points" data-fa="نکات کلیدی">Key Points</label>
+                        <textarea class="form-control" id="editKeyPoints" rows="4"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold" data-en="Arguments For" data-fa="استدلال های موافق">Arguments For</label>
+                        <textarea class="form-control" id="editArgumentsFor" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold" data-en="Arguments Against" data-fa="استدلال های مخالف">Arguments Against</label>
+                        <textarea class="form-control" id="editArgumentsAgainst" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold" data-en="Discussion Questions" data-fa="سوالات بحث">Discussion Questions</label>
+                        <textarea class="form-control" id="editDiscussionQuestions" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-en="Cancel" data-fa="لغو">Cancel</button>
+                    <button type="button" class="btn btn-primary" id="saveAnalysisChanges" data-en="Save Changes" data-fa="ذخیره تغییرات">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="text-center">
+                <p>&copy; 2024 LogikMeter. <span data-en="All rights reserved." data-fa="تمام حقوق محفوظ است.">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="create-topic.js"></script>
+</body>
+</html>

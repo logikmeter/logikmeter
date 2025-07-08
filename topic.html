@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic Details - LogikMeter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-brain me-2"></i>LogikMeter
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" data-en="Home" data-fa="خانه">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html" data-en="Dashboard" data-fa="داشبورد">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="topics.html" data-en="Topics" data-fa="موضوعات">Topics</a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <!-- Language Toggle -->
+                    <div class="dropdown me-3">
+                        <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown">
+                            <i class="fas fa-globe me-1"></i>
+                            <span id="currentLang">EN</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="changeLanguage('en')">English</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="changeLanguage('fa')">فارسی</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- User Menu -->
+                    <div class="dropdown">
+                        <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user me-1"></i>John Doe
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="wallet.html"><i class="fas fa-wallet me-2"></i><span data-en="Wallet" data-fa="کیف پول">Wallet</span></a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i><span data-en="Settings" data-fa="تنظیمات">Settings</span></a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i><span data-en="Logout" data-fa="خروج">Logout</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5 pt-4">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Topic Header -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start mb-3">
+                            <span class="badge bg-primary me-2">Technology</span>
+                            <span class="badge bg-success">Active Discussion</span>
+                        </div>
+                        <h1 class="card-title mb-3">Should remote work be mandatory for tech companies?</h1>
+                        <div class="d-flex align-items-center text-muted mb-3">
+                            <i class="fas fa-user me-2"></i>
+                            <span class="me-4">Created by John Doe</span>
+                            <i class="fas fa-clock me-2"></i>
+                            <span class="me-4">2 days ago</span>
+                            <i class="fas fa-eye me-2"></i>
+                            <span>234 views</span>
+                        </div>
+                        <p class="card-text">
+                            With the rise of remote work during the pandemic, many tech companies are reconsidering their office policies. This topic explores the benefits and challenges of making remote work mandatory for technology companies, considering factors like productivity, work-life balance, company culture, and long-term sustainability.
+                        </p>
+                        <div class="d-flex gap-2">
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#startDiscussionModal">
+                                <i class="fas fa-comments me-2"></i>
+                                <span data-en="Start Discussion" data-fa="شروع بحث">Start Discussion</span>
+                            </button>
+                            <button class="btn btn-outline-secondary">
+                                <i class="fas fa-share me-2"></i>
+                                <span data-en="Share" data-fa="اشتراک گذاری">Share</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Analysis -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <i class="fas fa-robot text-primary me-2"></i>
+                            <span data-en="AI Analysis" data-fa="تحلیل هوش مصنوعی">AI Analysis</span>
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6 class="text-primary" data-en="Key Points" data-fa="نکات کلیدی">Key Points</h6>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Remote work increases productivity for many employees</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Companies save on office space and overhead costs</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Work-life balance improves significantly</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Some roles require in-person collaboration</li>
+                                </ul>
+                                
+                                <h6 class="text-success mt-4" data-en="Arguments For" data-fa="استدلال های موافق">Arguments For</h6>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-plus-circle text-success me-2"></i>Reduced commute time and stress</li>
+                                    <li class="mb-2"><i class="fas fa-plus-circle text-success me-2"></i>Access to global talent pool</li>
+                                    <li class="mb-2"><i class="fas fa-plus-circle text-success me-2"></i>Environmental benefits</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h6 class="text-danger" data-en="Arguments Against" data-fa="استدلال های مخالف">Arguments Against</h6>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-minus-circle text-danger me-2"></i>Potential isolation and mental health issues</li>
+                                    <li class="mb-2"><i class="fas fa-minus-circle text-danger me-2"></i>Difficulty in team building and culture</li>
+                                    <li class="mb-2"><i class="fas fa-minus-circle text-danger me-2"></i>Security and data protection concerns</li>
+                                </ul>
+                                
+                                <h6 class="text-info mt-4" data-en="Discussion Questions" data-fa="سوالات بحث">Discussion Questions</h6>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-question-circle text-info me-2"></i>How can companies maintain culture remotely?</li>
+                                    <li class="mb-2"><i class="fas fa-question-circle text-info me-2"></i>What roles are best suited for remote work?</li>
+                                    <li class="mb-2"><i class="fas fa-question-circle text-info me-2"></i>How to measure productivity effectively?</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Voting Section -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <i class="fas fa-vote-yea text-warning me-2"></i>
+                            <span data-en="Current Poll" data-fa="نظرسنجی فعلی">Current Poll</span>
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="vote" id="vote1" value="strongly-agree">
+                                <label class="form-check-label" for="vote1">
+                                    <strong data-en="Strongly Agree" data-fa="کاملاً موافق">Strongly Agree</strong> - Remote work should be mandatory
+                                </label>
+                                <div class="progress mt-2" style="height: 8px;">
+                                    <div class="progress-bar bg-success" style="width: 35%"></div>
+                                </div>
+                                <small class="text-muted">35% (23 votes)</small>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="vote" id="vote2" value="agree">
+                                <label class="form-check-label" for="vote2">
+                                    <strong data-en="Agree" data-fa="موافق">Agree</strong> - With some exceptions for specific roles
+                                </label>
+                                <div class="progress mt-2" style="height: 8px;">
+                                    <div class="progress-bar bg-primary" style="width: 28%"></div>
+                                </div>
+                                <small class="text-muted">28% (18 votes)</small>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="vote" id="vote3" value="neutral">
+                                <label class="form-check-label" for="vote3">
+                                    <strong data-en="Neutral" data-fa="بی طرف">Neutral</strong> - Depends on company and industry
+                                </label>
+                                <div class="progress mt-2" style="height: 8px;">
+                                    <div class="progress-bar bg-warning" style="width: 15%"></div>
+                                </div>
+                                <small class="text-muted">15% (10 votes)</small>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="vote" id="vote4" value="disagree">
+                                <label class="form-check-label" for="vote4">
+                                    <strong data-en="Disagree" data-fa="مخالف">Disagree</strong> - Hybrid model is better
+                                </label>
+                                <div class="progress mt-2" style="height: 8px;">
+                                    <div class="progress-bar bg-info" style="width: 22%"></div>
+                                </div>
+                                <small class="text-muted">22% (14 votes)</small>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-warning">
+                            <i class="fas fa-vote-yea me-2"></i>
+                            <span data-en="Cast Vote" data-fa="رای دادن">Cast Vote</span>
+                        </button>
+                        <small class="text-muted ms-3">Total votes: 65</small>
+                    </div>
+                </div>
+
+                <!-- Comments Section -->
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0">
+                            <i class="fas fa-comments text-info me-2"></i>
+                            <span data-en="Comments" data-fa="نظرات">Comments</span> (12)
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- Comment Form -->
+                        <div class="mb-4">
+                            <textarea class="form-control" rows="3" placeholder="Share your thoughts..."></textarea>
+                            <div class="mt-2">
+                                <button class="btn btn-primary btn-sm">
+                                    <span data-en="Post Comment" data-fa="ارسال نظر">Post Comment</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Comments List -->
+                        <div class="comment mb-3 p-3 bg-light rounded">
+                            <div class="d-flex align-items-center mb-2">
+                                <strong>Sarah Johnson</strong>
+                                <small class="text-muted ms-2">2 hours ago</small>
+                            </div>
+                            <p class="mb-2">I think remote work has definitely improved my productivity. The lack of office distractions and commute time allows me to focus better on complex coding tasks.</p>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-thumbs-up me-1"></i>5
+                                </button>
+                                <button class="btn btn-sm btn-outline-secondary">Reply</button>
+                            </div>
+                        </div>
+                        
+                        <div class="comment mb-3 p-3 bg-light rounded">
+                            <div class="d-flex align-items-center mb-2">
+                                <strong>Mike Chen</strong>
+                                <small class="text-muted ms-2">4 hours ago</small>
+                            </div>
+                            <p class="mb-2">While I appreciate the flexibility, I miss the spontaneous collaboration that happens in an office environment. Some of our best ideas came from casual conversations.</p>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-sm btn-outline-primary">
+                                    <i class="fas fa-thumbs-up me-1"></i>3
+                                </button>
+                                <button class="btn btn-sm btn-outline-secondary">Reply</button>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button class="btn btn-outline-primary">
+                                <span data-en="Load More Comments" data-fa="بارگذاری نظرات بیشتر">Load More Comments</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <!-- Topic Stats -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h6 class="mb-0" data-en="Topic Statistics" data-fa="آمار موضوع">Topic Statistics</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="stat-item d-flex justify-content-between mb-2">
+                            <span data-en="Participants" data-fa="شرکت کنندگان">Participants</span>
+                            <strong>15</strong>
+                        </div>
+                        <div class="stat-item d-flex justify-content-between mb-2">
+                            <span data-en="Total Votes" data-fa="کل آرا">Total Votes</span>
+                            <strong>65</strong>
+                        </div>
+                        <div class="stat-item d-flex justify-content-between mb-2">
+                            <span data-en="Comments" data-fa="نظرات">Comments</span>
+                            <strong>12</strong>
+                        </div>
+                        <div class="stat-item d-flex justify-content-between mb-2">
+                            <span data-en="Views" data-fa="بازدید">Views</span>
+                            <strong>234</strong>
+                        </div>
+                        <div class="stat-item d-flex justify-content-between">
+                            <span data-en="LMC Reward" data-fa="پاداش LMC">LMC Reward</span>
+                            <strong class="text-warning">50 LMC</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Discussion Timer -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h6 class="mb-0" data-en="Discussion Status" data-fa="وضعیت بحث">Discussion Status</h6>
+                    </div>
+                    <div class="card-body text-center">
+                        <div class="mb-3">
+                            <i class="fas fa-clock fa-2x text-success"></i>
+                        </div>
+                        <h4 class="text-success mb-2">Active Discussion</h4>
+                        <div class="countdown-display mb-3">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="countdown-item">
+                                        <div class="countdown-number">23</div>
+                                        <div class="countdown-label">Hours</div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="countdown-item">
+                                        <div class="countdown-number">45</div>
+                                        <div class="countdown-label">Minutes</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-muted small">Discussion ends in</p>
+                    </div>
+                </div>
+
+                <!-- Related Topics -->
+                <div class="card">
+                    <div class="card-header">
+                        <h6 class="mb-0" data-en="Related Topics" data-fa="موضوعات مرتبط">Related Topics</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="related-topic mb-3">
+                            <h6 class="mb-1">
+                                <a href="#" class="text-decoration-none">Future of hybrid work models</a>
+                            </h6>
+                            <small class="text-muted">12 participants • 2 days ago</small>
+                        </div>
+                        <div class="related-topic mb-3">
+                            <h6 class="mb-1">
+                                <a href="#" class="text-decoration-none">Digital nomad lifestyle pros and cons</a>
+                            </h6>
+                            <small class="text-muted">8 participants • 5 days ago</small>
+                        </div>
+                        <div class="related-topic">
+                            <h6 class="mb-1">
+                                <a href="#" class="text-decoration-none">Work-life balance in tech industry</a>
+                            </h6>
+                            <small class="text-muted">15 participants • 1 week ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Start Discussion Modal -->
+    <div class="modal fade" id="startDiscussionModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" data-en="Start New Discussion" data-fa="شروع بحث جدید">Start New Discussion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label" data-en="Discussion Duration" data-fa="مدت زمان بحث">Discussion Duration</label>
+                            <select class="form-select" required>
+                                <option value="30" data-en="30 minutes" data-fa="30 دقیقه">30 minutes</option>
+                                <option value="60" selected data-en="1 hour" data-fa="1 ساعت">1 hour</option>
+                                <option value="90" data-en="1.5 hours" data-fa="1.5 ساعت">1.5 hours</option>
+                                <option value="120" data-en="2 hours" data-fa="2 ساعت">2 hours</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" data-en="Invite Participants" data-fa="دعوت شرکت کنندگان">Invite Participants</label>
+                            <textarea class="form-control" rows="3" placeholder="Enter usernames separated by commas (optional)"></textarea>
+                            <div class="form-text" data-en="Leave empty for public discussion" data-fa="برای بحث عمومی خالی بگذارید">Leave empty for public discussion</div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="allowAnonymous">
+                                <label class="form-check-label" for="allowAnonymous" data-en="Allow anonymous participation" data-fa="اجازه مشارکت ناشناس">
+                                    Allow anonymous participation
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-en="Cancel" data-fa="لغو">Cancel</button>
+                    <button type="button" class="btn btn-primary" data-en="Start Discussion" data-fa="شروع بحث">Start Discussion</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light py-4 mt-5">
+        <div class="container">
+            <div class="text-center">
+                <p>&copy; 2024 LogikMeter. <span data-en="All rights reserved." data-fa="تمام حقوق محفوظ است.">All rights reserved.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
